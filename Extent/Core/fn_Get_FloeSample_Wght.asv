@@ -1,0 +1,82 @@
+% ------------------------
+%    fn_Get_FloeSample_Wght
+%
+%
+%   Inputs:
+%         DiamS - list of diameters to model the FSD with
+%         Dmin - minimum diameter of the FSD (split power law)
+%         Dt  - critical diameter of the FSD (split power law) (turning point)
+%         gamma1 - slope of FSD power law between Dmin and Dt
+%         gamma2- slope of FSD power above Dt
+% 
+%   Outputs:
+%         Weights - Probability given by FSD around the corresponding
+%         Diameter in DiamS
+%         ExTot - Expected Diameter value in the FSD
+% 
+%  Authored by Jordan Pitt 20/10/21
+% ------------------------
+
+function   [Weights,ExTot] = fn_Get_FloeSample_Wght(DiamS,Dmin,Dt,gamma1,gamma2)
+
+%Coefficients to ensure that Pareto dist is bounded properly (sums to 1)
+betap1 = 1 ./(Dmin^(-gamma1) - Dt^(-gamma1));
+betap2 = 1 ./(Dt^(-gamma2) );    
+
+% % Williams - 2013 split probability
+%Create intervals over which to find probability (around DiamS)
+DiamS_D = (DiamS(2) - DiamS(1))/2;
+DiamSh = DiamS(1:end-1) + DiamS_D;
+
+%Ensure both the first and second slopes, intersect at Dt
+% P1end = betap1 ./ (Dt.^(gamma1 +1)); 
+% P2beg = betap2 ./ (Dt.^(gamma2 +1));
+% P0 = P1end/P2beg;
+
+P1end = betap1 .* (Dt.^(-gamma1)); 
+P2beg = betap2 .* (Dt.^(-gamma2));
+P0 = 1 / (P2beg./P1end + 1);
+
+%Exceedance probability for Diams < Dmin, Dmin<Diams< Dt and Diams > Dt
+Pp1 = (1)+0*DiamSh(DiamSh <= Dmin);
+Pp2 = (1-P0)*betap1.*(DiamSh(and(DiamSh > Dmin,DiamSh <=Dt)).^(-gamma1));
+Pp3 = (P0)*betap2.*(DiamSh(DiamSh > Dt).^(-gamma2));
+
+
+% PDF = [1,Pp1,Pp2,Pp3];
+% Weights = PDF(1:end-1) - PDF(2:end);
+% 
+% Turn the Exceedance proability of the interval edges, into proabability
+% that Diam is in interval around the diameters we have calculated
+% Have to allow for changing Dt, hence the if statments.
+if ~isempty(Pp1)
+   Wp1 = [1-Pp1(1), Pp1(1:end-1)-Pp1(2:end)];
+else
+    Wp1 = [];
+end
+
+P1end =(1-P0)*betap1.*Dmin.^(-gamma1)-Pp2(1); 
+Wp2 = [P1end, Pp2(1:end-1)-Pp2(2:end)];
+
+if ~isempty(Pp3)
+  P2end= Pp2(end) - (1-P0)*betap1.*Dt.^(-gamma1) + (P0)*betap2.*Dt.^(-gamma2) - Pp3(1);
+  Wp3 = [P2end, Pp3(1:end-1)-Pp3(2:end),Pp3(end)];
+else
+   Wp3 = [Pp2(end)];
+end
+
+Weights = [Wp1,Wp2,Wp3];
+
+
+%Calculate Expected value of dist
+if Dt > Dmin
+    ExP1 = -(1-P0)*betap1*(gamma1 / (gamma1 - 1))*(Dt^(-gamma1 +1) - Dmin^(-gamma1 +1));
+    ExP2 = -P0*betap2*(gamma2 / (gamma2 - 1))*(- Dt^(-gamma2 +1));
+    ExTot = ExP1 + ExP2;
+else
+    ExTot = -betap2*(gamma2 / (gamma2 - 1))*(- Dt^(-gamma2 +1));
+end
+
+
+
+end

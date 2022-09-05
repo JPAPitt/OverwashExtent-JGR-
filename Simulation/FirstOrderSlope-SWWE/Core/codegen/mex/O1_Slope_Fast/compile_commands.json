@@ -1,0 +1,92 @@
+[
+  {
+    "directory": "/Users/a1229158/Documents/GitHub/SingleFloeLinearModel/Overwash-Simulations/FirstOrderSlope-SWWE/Core/codegen/mex/O1_Slope_Fast",
+    "command": "/usr/bin/xcrun -sdk macosx11.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.14 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/a1229158/Documents/GitHub/SingleFloeLinearModel/Overwash-Simulations/FirstOrderSlope-SWWE/Core\" -I \"./interface\" -I \"/Applications/MATLAB_R2020b.app/extern/include\" -I \".\" -DMODEL=O1_Slope_Fast_mex -c  O1_Slope_Fast_data.c -o build/maci64/O1_Slope_Fast_data.o",
+    "file": "O1_Slope_Fast_data.c",
+    "output": "build/maci64/O1_Slope_Fast_data.o"
+  },
+  {
+    "directory": "/Users/a1229158/Documents/GitHub/SingleFloeLinearModel/Overwash-Simulations/FirstOrderSlope-SWWE/Core/codegen/mex/O1_Slope_Fast",
+    "command": "/usr/bin/xcrun -sdk macosx11.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.14 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/a1229158/Documents/GitHub/SingleFloeLinearModel/Overwash-Simulations/FirstOrderSlope-SWWE/Core\" -I \"./interface\" -I \"/Applications/MATLAB_R2020b.app/extern/include\" -I \".\" -DMODEL=O1_Slope_Fast_mex -c  rt_nonfinite.c -o build/maci64/rt_nonfinite.o",
+    "file": "rt_nonfinite.c",
+    "output": "build/maci64/rt_nonfinite.o"
+  },
+  {
+    "directory": "/Users/a1229158/Documents/GitHub/SingleFloeLinearModel/Overwash-Simulations/FirstOrderSlope-SWWE/Core/codegen/mex/O1_Slope_Fast",
+    "command": "/usr/bin/xcrun -sdk macosx11.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.14 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/a1229158/Documents/GitHub/SingleFloeLinearModel/Overwash-Simulations/FirstOrderSlope-SWWE/Core\" -I \"./interface\" -I \"/Applications/MATLAB_R2020b.app/extern/include\" -I \".\" -DMODEL=O1_Slope_Fast_mex -c  O1_Slope_Fast_initialize.c -o build/maci64/O1_Slope_Fast_initialize.o",
+    "file": "O1_Slope_Fast_initialize.c",
+    "output": "build/maci64/O1_Slope_Fast_initialize.o"
+  },
+  {
+    "directory": "/Users/a1229158/Documents/GitHub/SingleFloeLinearModel/Overwash-Simulations/FirstOrderSlope-SWWE/Core/codegen/mex/O1_Slope_Fast",
+    "command": "/usr/bin/xcrun -sdk macosx11.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.14 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/a1229158/Documents/GitHub/SingleFloeLinearModel/Overwash-Simulations/FirstOrderSlope-SWWE/Core\" -I \"./interface\" -I \"/Applications/MATLAB_R2020b.app/extern/include\" -I \".\" -DMODEL=O1_Slope_Fast_mex -c  O1_Slope_Fast_terminate.c -o build/maci64/O1_Slope_Fast_terminate.o",
+    "file": "O1_Slope_Fast_terminate.c",
+    "output": "build/maci64/O1_Slope_Fast_terminate.o"
+  },
+  {
+    "directory": "/Users/a1229158/Documents/GitHub/SingleFloeLinearModel/Overwash-Simulations/FirstOrderSlope-SWWE/Core/codegen/mex/O1_Slope_Fast",
+    "command": "/usr/bin/xcrun -sdk macosx11.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.14 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/a1229158/Documents/GitHub/SingleFloeLinearModel/Overwash-Simulations/FirstOrderSlope-SWWE/Core\" -I \"./interface\" -I \"/Applications/MATLAB_R2020b.app/extern/include\" -I \".\" -DMODEL=O1_Slope_Fast_mex -c  O1_Slope_Fast.c -o build/maci64/O1_Slope_Fast.o",
+    "file": "O1_Slope_Fast.c",
+    "output": "build/maci64/O1_Slope_Fast.o"
+  },
+  {
+    "directory": "/Users/a1229158/Documents/GitHub/SingleFloeLinearModel/Overwash-Simulations/FirstOrderSlope-SWWE/Core/codegen/mex/O1_Slope_Fast",
+    "command": "/usr/bin/xcrun -sdk macosx11.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.14 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/a1229158/Documents/GitHub/SingleFloeLinearModel/Overwash-Simulations/FirstOrderSlope-SWWE/Core\" -I \"./interface\" -I \"/Applications/MATLAB_R2020b.app/extern/include\" -I \".\" -DMODEL=O1_Slope_Fast_mex -c  power.c -o build/maci64/power.o",
+    "file": "power.c",
+    "output": "build/maci64/power.o"
+  },
+  {
+    "directory": "/Users/a1229158/Documents/GitHub/SingleFloeLinearModel/Overwash-Simulations/FirstOrderSlope-SWWE/Core/codegen/mex/O1_Slope_Fast",
+    "command": "/usr/bin/xcrun -sdk macosx11.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.14 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/a1229158/Documents/GitHub/SingleFloeLinearModel/Overwash-Simulations/FirstOrderSlope-SWWE/Core\" -I \"./interface\" -I \"/Applications/MATLAB_R2020b.app/extern/include\" -I \".\" -DMODEL=O1_Slope_Fast_mex -c  eml_int_forloop_overflow_check.c -o build/maci64/eml_int_forloop_overflow_check.o",
+    "file": "eml_int_forloop_overflow_check.c",
+    "output": "build/maci64/eml_int_forloop_overflow_check.o"
+  },
+  {
+    "directory": "/Users/a1229158/Documents/GitHub/SingleFloeLinearModel/Overwash-Simulations/FirstOrderSlope-SWWE/Core/codegen/mex/O1_Slope_Fast",
+    "command": "/usr/bin/xcrun -sdk macosx11.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.14 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/a1229158/Documents/GitHub/SingleFloeLinearModel/Overwash-Simulations/FirstOrderSlope-SWWE/Core\" -I \"./interface\" -I \"/Applications/MATLAB_R2020b.app/extern/include\" -I \".\" -DMODEL=O1_Slope_Fast_mex -c  scalexpAlloc.c -o build/maci64/scalexpAlloc.o",
+    "file": "scalexpAlloc.c",
+    "output": "build/maci64/scalexpAlloc.o"
+  },
+  {
+    "directory": "/Users/a1229158/Documents/GitHub/SingleFloeLinearModel/Overwash-Simulations/FirstOrderSlope-SWWE/Core/codegen/mex/O1_Slope_Fast",
+    "command": "/usr/bin/xcrun -sdk macosx11.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.14 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/a1229158/Documents/GitHub/SingleFloeLinearModel/Overwash-Simulations/FirstOrderSlope-SWWE/Core\" -I \"./interface\" -I \"/Applications/MATLAB_R2020b.app/extern/include\" -I \".\" -DMODEL=O1_Slope_Fast_mex -c  abs.c -o build/maci64/abs.o",
+    "file": "abs.c",
+    "output": "build/maci64/abs.o"
+  },
+  {
+    "directory": "/Users/a1229158/Documents/GitHub/SingleFloeLinearModel/Overwash-Simulations/FirstOrderSlope-SWWE/Core/codegen/mex/O1_Slope_Fast",
+    "command": "/usr/bin/xcrun -sdk macosx11.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.14 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/a1229158/Documents/GitHub/SingleFloeLinearModel/Overwash-Simulations/FirstOrderSlope-SWWE/Core\" -I \"./interface\" -I \"/Applications/MATLAB_R2020b.app/extern/include\" -I \".\" -DMODEL=O1_Slope_Fast_mex -c  interface/_coder_O1_Slope_Fast_api.c -o build/maci64/_coder_O1_Slope_Fast_api.o",
+    "file": "interface/_coder_O1_Slope_Fast_api.c",
+    "output": "build/maci64/_coder_O1_Slope_Fast_api.o"
+  },
+  {
+    "directory": "/Users/a1229158/Documents/GitHub/SingleFloeLinearModel/Overwash-Simulations/FirstOrderSlope-SWWE/Core/codegen/mex/O1_Slope_Fast",
+    "command": "/usr/bin/xcrun -sdk macosx11.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.14 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/a1229158/Documents/GitHub/SingleFloeLinearModel/Overwash-Simulations/FirstOrderSlope-SWWE/Core\" -I \"./interface\" -I \"/Applications/MATLAB_R2020b.app/extern/include\" -I \".\" -DMODEL=O1_Slope_Fast_mex -c  interface/_coder_O1_Slope_Fast_mex.c -o build/maci64/_coder_O1_Slope_Fast_mex.o",
+    "file": "interface/_coder_O1_Slope_Fast_mex.c",
+    "output": "build/maci64/_coder_O1_Slope_Fast_mex.o"
+  },
+  {
+    "directory": "/Users/a1229158/Documents/GitHub/SingleFloeLinearModel/Overwash-Simulations/FirstOrderSlope-SWWE/Core/codegen/mex/O1_Slope_Fast",
+    "command": "/usr/bin/xcrun -sdk macosx11.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.14 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/a1229158/Documents/GitHub/SingleFloeLinearModel/Overwash-Simulations/FirstOrderSlope-SWWE/Core\" -I \"./interface\" -I \"/Applications/MATLAB_R2020b.app/extern/include\" -I \".\" -DMODEL=O1_Slope_Fast_mex -c  sqrt.c -o build/maci64/sqrt.o",
+    "file": "sqrt.c",
+    "output": "build/maci64/sqrt.o"
+  },
+  {
+    "directory": "/Users/a1229158/Documents/GitHub/SingleFloeLinearModel/Overwash-Simulations/FirstOrderSlope-SWWE/Core/codegen/mex/O1_Slope_Fast",
+    "command": "/usr/bin/xcrun -sdk macosx11.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.14 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/a1229158/Documents/GitHub/SingleFloeLinearModel/Overwash-Simulations/FirstOrderSlope-SWWE/Core\" -I \"./interface\" -I \"/Applications/MATLAB_R2020b.app/extern/include\" -I \".\" -DMODEL=O1_Slope_Fast_mex -c  O1_Slope_Fast_emxutil.c -o build/maci64/O1_Slope_Fast_emxutil.o",
+    "file": "O1_Slope_Fast_emxutil.c",
+    "output": "build/maci64/O1_Slope_Fast_emxutil.o"
+  },
+  {
+    "directory": "/Users/a1229158/Documents/GitHub/SingleFloeLinearModel/Overwash-Simulations/FirstOrderSlope-SWWE/Core/codegen/mex/O1_Slope_Fast",
+    "command": "/usr/bin/xcrun -sdk macosx11.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.14 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/a1229158/Documents/GitHub/SingleFloeLinearModel/Overwash-Simulations/FirstOrderSlope-SWWE/Core\" -I \"./interface\" -I \"/Applications/MATLAB_R2020b.app/extern/include\" -I \".\" -DMODEL=O1_Slope_Fast_mex -c  interface/_coder_O1_Slope_Fast_info.c -o build/maci64/_coder_O1_Slope_Fast_info.o",
+    "file": "interface/_coder_O1_Slope_Fast_info.c",
+    "output": "build/maci64/_coder_O1_Slope_Fast_info.o"
+  },
+  {
+    "directory": "/Users/a1229158/Documents/GitHub/SingleFloeLinearModel/Overwash-Simulations/FirstOrderSlope-SWWE/Core/codegen/mex/O1_Slope_Fast",
+    "command": "/usr/bin/xcrun -sdk macosx11.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.14 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/a1229158/Documents/GitHub/SingleFloeLinearModel/Overwash-Simulations/FirstOrderSlope-SWWE/Core\" -I \"./interface\" -I \"/Applications/MATLAB_R2020b.app/extern/include\" -I \".\" -DMODEL=O1_Slope_Fast_mex -c  /Applications/MATLAB_R2020b.app/extern/version/c_mexapi_version.c -o build/maci64/c_mexapi_version.o",
+    "file": "/Applications/MATLAB_R2020b.app/extern/version/c_mexapi_version.c",
+    "output": "build/maci64/c_mexapi_version.o"
+  }
+]

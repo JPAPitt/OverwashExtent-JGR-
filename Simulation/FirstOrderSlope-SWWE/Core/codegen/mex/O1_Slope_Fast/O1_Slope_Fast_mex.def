@@ -1,0 +1,18 @@
+LIBRARY O1_Slope_Fast_mex.mexw64
+EXPORTS
+mexFunction
+mexfilerequiredapiversion
+emlrtMexFcnProperties
+O1_Slope_Fast
+O1_Slope_Fast_initialize
+O1_Slope_Fast_terminate
+O1_Slope_Fast_atexit
+emxFree_boolean_T
+emxFree_int32_T
+emxEnsureCapacity_boolean_T
+emxEnsureCapacity_int32_T
+emxInit_boolean_T
+emxInit_int32_T
+emxFree_real_T
+emxInit_real_T
+emxEnsureCapacity_real_T
