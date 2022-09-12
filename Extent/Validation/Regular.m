@@ -1,14 +1,11 @@
 % ------------------------
-%       Regular
+%       Regular Wave Result
 % ------------------------
 %
-%  Authored by Jordan Pitt 20/10/21
+%  Authored by Jordan Pitt 08/09/22
 %
-% Use matrices of T(w), R(w), zeta(w,0),zeta(w,L) - using floe parameters
-% from Bennetts and Williams 2015 
-%
-% Calculate overwash of these floes, with regular waves
-
+% Uses matrices - T(w,L,d) , R(w,L,d) , \zeta(w,0,L,d), \zeta(w,L,L,d)
+% to predict overwash extent for regular wave experiment in Bennetts and Williams 2015 
 %Since the disks are the same, can actually calculate the amplitude
 %required to overwash a number of disks, which is what we do here (to analytically get the contours)
 
@@ -45,35 +42,12 @@ RPE_Cond = PlateCond./abs(TA-RPE);
 
 CritAEither = min(LPE_Cond,RPE_Cond);
 
+%calculate amplitude required to overwash a given number of disks
 for i2 = 1:size(DiskCounts,2)
     CritAEDisk = CritAEither ./ (abs(TA).^DiskCounts(i2)) ;
     AsCritS(i2,:) = CritAEDisk;
 end
 
-
-
-AMat = repmat(Amps,size(TpS,2),1);
-TpMat = repmat(TpS.',1,size(Amps,2));
-DiskCountMat = zeros(size(AMat));
-
-for i1 = 1:size(TpMat,1)
-    for i2 = 1:size(TpMat,2)
-        Tp = TpMat(i1,i2);
-        As = AMat(i1,i2);
-        
-        IndexLB = find(As > AsCritS(:,i1),1,'last');
-        
-        if isempty(IndexLB)
-            DiskCountMat(i1,i2) = 0;
-        else 
-            if IndexLB == length(DiskCounts)
-                DiskCountMat(i1,i2) = DiskCounts(end);
-            else
-                DiskCountMat(i1,i2) = DiskCounts(IndexLB+1);
-            end
-        end
-    end
-end
 
 %Experimental data
 ExpD0Amp = [0.015,0.02 ,0.02,0.02];
@@ -90,6 +64,7 @@ MA = max(Amps);
 
 Cols =parula(length(DiskCounts));
 
+%Plot the contours for disks overwashed (Amplitude, Periods)
 figure('DefaultAxesFontSize',18);
 for i2 = 1:size(DiskCounts,2)
     ListA = AsCritS(i2,:);

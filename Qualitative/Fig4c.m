@@ -2,7 +2,7 @@
 %      Fig4c
 % ------------------------
 %
-%  Authored by Jordan Pitt 20/10/21
+%  Authored by Jordan Pitt 08/09/22
 %
 %   Plot matrices - T(w,L,d) , R(w,L,d) , \zeta(w,0,L,d), \zeta(w,L,L,d)
 % as function of L
@@ -12,16 +12,6 @@ clear all;
 
 %Load in the coefficient matrices
 load('../Outputs/Data/CoefficientMatrices/Fig4_Qual/Length_Dep.mat');
-
-%Height tolerance ensuring overwash is significantly above the plate
-HeightTol = 0.001;
-
-%Draught ratio - Archimedes
-DRat = ParamCons.DRat;
-
-%Frequency tolerance on overwash
-TolFac = 20;
-
 
 Pers = (reshape(P_Mat(1,1,:),1,[]));
 

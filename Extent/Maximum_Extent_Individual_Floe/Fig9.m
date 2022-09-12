@@ -96,7 +96,7 @@ for i2 = 1:size(NT_Mat,2)
      
      X_Dists = fn_OWEx_IceProps(Pers,Trans_Wght,TA,RA,LPE,RPE,S_I,PlateCond,TolFac,DiamS,Dists);
      
-     OWE_Mat(:,i2)  = X_Dists; %(NumFloes.*ExtAvg)/ Conc;
+     OWE_Mat(:,i2)  = X_Dists;
      
 end
 
@@ -116,9 +116,6 @@ Col_List = parula(ColNum);
 %which becomes blurry in paper/presentation
 Num = 2*length(NT_Mat);
 ResizedMat = imresize(ColInd,[Num,Num],'nearest');
-
-% figure('DefaultAxesFontSize',18);
-% contourf(NT_Mat,ND_Mat,OWE_Mat,DistScale)
 
 
 %produce the figures of maximum overwash distance VS Floe properties

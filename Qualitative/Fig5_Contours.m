@@ -2,13 +2,16 @@
 %       IrrOW_FSD_WaveProps_Wghts_Gen
 % ------------------------
 %
-%  Authored by Jordan Pitt 20/10/21
+%  Authored by Jordan Pitt 08/09/22
 %
 % Uses matrices - T(w,L,d) , R(w,L,d) , \zeta(w,0,L,d), \zeta(w,L,L,d)
 % to produce a transmission model in an FSD + predict overwash of specific
 % floe geometry based on wave properties
 %
 % The initial spectra is Jonswap - with fixed Hs, Tp
+%
+% generates plot of ensemble average overwash frequency f_o as function of
+% Hs and Tp
 
 close all;
 clear all;
@@ -30,10 +33,8 @@ ThickS = reshape(FT_Mat(1,:,1),1,[]);
 DiamS = reshape(FD_Mat(:,1,1),1,[]);
 
 %Floe propertys to investigate overwash for - as index - diameter is
-%FD_Mat(i1,:), thickness is FT_Mat(i2,:)
 i1 = 1;
 i2 = 1;
-
 
 %Load matrices giving coefficients as functions of Diameter and w/T
 [Pers,TA,RA,LPE,RPE,FT]= fn_Get_Response_AllDiams(P_Mat,LB_Out,FT_Mat,i2);
@@ -55,10 +56,7 @@ RA_Mod = interp1(FFs,RA,FFs_Mod);
 LPE_Mod = interp1(FFs,LPE,FFs_Mod);
 RPE_Mod = interp1(FFs,RPE,FFs_Mod);
 
-
-
 %Wave properties to invesitgate maximum overwash extent for
-% NumRes = 500;
 NumRes = 600;
 T0 = 6;
 T1 = 20;
@@ -74,37 +72,29 @@ HsTargs = linspace(H0,H1,NumRes) ;
 OW_Mat = zeros(size(Tp_Mat));
 OR_Mat = zeros(size(Tp_Mat));
 
-%loop over peak period
+%loop over peak period and Hs
+% for each generate overwash frequency - using the coefficients from
+% coefficient matrix
 for i = 1:size(Tp_Mat,1)
-    
     for j = 1: size(Tp_Mat,2)
        
-    
         Hs = Hs_Mat(i,j);
         Tp = Tp_Mat(i,j);
         
-%        
+       %incoming spectra 
         U10 = 12;
         gamma=3.3;
         n = -5;
         [S_I,Beta,Tp] = fn_gJS(FFs_Mod,Hs,Tp,U10,gamma,n);
-
-%         S_In = jonswapIEE(FFs,Tp,Hs);
-%         
-%         figure();
-%         hold on;
-%         plot(FFs,S_I,'-b');
-%         plot(FFs,S_In,'--r');
-%         
-%         %zero and second moments for incoming spectra
+        
+        %zero and second moments for incoming spectra
         M0_Inc =trapz(FFs_Mod ,S_I);
         M2_Inc = trapz(FFs_Mod ,(FFs_Mod.^2) .*S_I);
 
         %mean period for incoming
         AvgMeanT_Inc = sqrt(M0_Inc/ M2_Inc);
 
-        %left spectra - only because  abs(1 + Tp_RA - Tp_LPE ).^2 > abs(Tp_TA - Tp_RPE )
-        %want to calculate this Hs crit, so we need just one
+        %left spectra (Sl)
         LE0_Spectrum = (abs(1 + RA_Mod - LPE_Mod ).^2).*S_I;
 
         %zero and second moments for left plate spectra
@@ -113,6 +103,7 @@ for i = 1:size(Tp_Mat,1)
         
         AT_LE = sqrt(M0_LE ./ M2_LE)./ exp(-PlateCond^2 ./ (2.*M0_LE));
         
+        %right spectra (Sr)
         RE0_Spectrum = (abs(TA_Mod - RPE_Mod ).^2).*S_I;
         
         %zero and second moments for left plate spectra
@@ -122,9 +113,10 @@ for i = 1:size(Tp_Mat,1)
         AT_RE = sqrt(M0_RE ./ M2_RE)./ exp(-PlateCond^2 ./ (2.*M0_RE));
 
         AT_M_List = min(AT_LE,AT_RE);
+        
+        %overwash frequency
         OR = AvgMeanT_Inc / AT_M_List;
         
-%         Freq_List = AT_M_List./ AT_I_List;
    
         OR_Mat(i,j) = OR;
         
@@ -135,6 +127,13 @@ for i = 1:size(Tp_Mat,1)
     end
 end
 
+%from the overwash frequencty for each Hs and Tp, generate contours in
+%Level1
+OR_Mat = fillmissing(OR_Mat,'constant',0);
+Level1 = [0,0.05,0.1,0.5,1,2,3,4,100];
+
+Col_List = parula(8);
+ColInd = discretize( OR_Mat,Level1);
 
 figure();
 image('XData',[T0,T1],'YData',[H0,H1],'CData', ColInd )

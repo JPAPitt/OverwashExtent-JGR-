@@ -31,9 +31,6 @@ TolFac = 20;
 ThickS = reshape(FT_Mat(1,:,1),1,[]);
 DiamS = reshape(FD_Mat(:,1,1),1,[]);
 
-
-
-
 rho = 1e3;
 
 %Toyota - Fragmented Floe

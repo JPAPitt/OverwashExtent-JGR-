@@ -16,11 +16,6 @@ path(path,'../Main')
 path(path,'../CommonFunctions')
 path(path,'../CommonFunctions/Mat2Tikzsrc')
 
-%Linear floe Models
-path(path,'../CoupledfloeWaveMotions/Solver/LukeSinglePlate/Core/')
-path(path,'../CoupledfloeWaveMotions/Solver/LukeSinglePlate/Core/Roots/')
-path(path,'../CoupledfloeWaveMotions/GenerateSolutions/')
-
 %Qualitative Plots
 path(path,'../Qualitative/')
 

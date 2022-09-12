@@ -1,16 +1,14 @@
 % ------------------------
-%       Irregular
+%       Irregular Wave Result
 % ------------------------
 %
-%  Authored by Jordan Pitt 20/10/21
+%  Authored by Jordan Pitt 08/09/22
 %
-% Use matrices of T(w), R(w), zeta(w,0),zeta(w,L) - using floe parameters
-% from Bennetts and Williams 2015 
-%
-% Calculate overwash of these floes, with Irregular waves
-
-%Since the disks are the same, can actually calculate the Hs
+% Uses matrices - T(w,L,d) , R(w,L,d) , \zeta(w,0,L,d), \zeta(w,L,L,d)
+% to predict overwash extent for irregular wave experiment in Bennetts and Williams 2015 
+%Since the disks are the same, can actually calculate the amplitude
 %required to overwash a number of disks, which is what we do here (to analytically get the contours)
+
 
 %Load in matrices
 close all;

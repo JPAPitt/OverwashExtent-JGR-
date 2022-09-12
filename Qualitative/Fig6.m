@@ -1,4 +1,15 @@
-
+% ------------------------
+%       Fig6
+% ------------------------
+%
+%  Authored by Jordan Pitt 08/09/22
+%
+% Uses matrices - T(w,L,d) , R(w,L,d) , \zeta(w,0,L,d), \zeta(w,L,L,d)
+% to produce a transmission model in an FSD
+%
+% The initial spectra is Jonswap - with fixed Hs, Tp
+%
+% Plots the attenuation of a spectrum over distance, by the floe field (using scattering and dissipation)
 
 %Do this way, for validation AND comparison to Gaussian wave exceedance
 %probabilities, assuming Gaussian distro. 
@@ -9,18 +20,11 @@ ws = 2*pi*FFs;
 TpS = 1./FFs;
 
 
-%Mean of both seasons - Youngs
+%Spectra
 HsTarg = 2;
-
-% JSpec = jonswapIEE(FFs,TpTarg,HsTarg)/ (2*pi);
-
-%Middle between the summer and winter means - Youngs work
 U10 = 12;
 gamma=3.3;
 n = -5;
-
-%demarcation
-% InvWaveAge = 0.83;
 [gJSpec,Beta,Tp] = fn_gJS(FFs,HsTarg,[],U10,gamma,n);
 InvWaveAge = (Beta/  0.006)^(1/0.55);
 gJSpec = gJSpec ./  (2*pi);
@@ -35,7 +39,7 @@ ThickS = reshape(FT_Mat(1,:,1),1,[]);
 DiamS = reshape(FD_Mat(:,1,1),1,[]);
 
 
-
+%Floe properties
 Conc = 0.6;
 
 i1 = 4;
@@ -52,14 +56,12 @@ Dt = 3.15;
 [Weights,ExtAvg] = fn_Get_FloeSample_Wght(DiamS,Dmin,Dt,gamma1,gamma2);
 
 XDist = [1e3,1e4];
-% XDist = [1e4];
 
 Num = round(XDist *Conc /  ExtAvg);
 
 
-% 1 - first
+% 1km Attenuation
 SampleNum = 1;
-% LongAttn = false;
 LongAttn = true;
 
 
@@ -96,7 +98,7 @@ Trans_Wght_1 = interp1(Pers,Trans_Wght, 1 ./FFs);
 Trans_Wght_FSD_1 = interp1(Pers,Trans_Wght_FSD, 1 ./FFs);
 Trans_Wght_Disp_1 = interp1(Pers,Trans_Wght_Disp, 1 ./FFs);
 
-
+%Floe counts
 figure('DefaultAxesFontSize',18);
 loglog(DiamS,Weights.*XDist(1)*Conc/ExtAvg  ,'--k')
 hold on;
@@ -108,13 +110,10 @@ ylabel('Count')
 cleanfigure;
 matlab2tikz('../Outputs/Plots/Fig6aInset.tex'); 
 
-
+%Spectra
 figure('DefaultAxesFontSize',18);
 hold on;
-
 S_I = gJSpec;
-
-
 plot(2*pi*FFs,(Trans_Wght_1.^XDist(1)).*S_I,'-b');
 plot(2*pi*FFs,(Trans_Wght_FSD_1.^XDist(1)).*S_I,'-g');
 plot(2*pi*FFs,(Trans_Wght_Disp_1.^XDist(1)).*S_I,'-y');
@@ -136,8 +135,8 @@ M0_1 = trapz(FFs,2*pi*S_N_1km);
 Hs_1 = 4*sqrt(M0_1);
 
 
-% 
-% % 2 - second
+
+% 10km Attenuation
 
 SampleNum = 11;
 LongAttn = true;

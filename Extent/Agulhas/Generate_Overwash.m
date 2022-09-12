@@ -1,3 +1,17 @@
+% ------------------------
+%       Generate_Overwash
+% ------------------------
+%
+%  Authored by Jordan Pitt 08/09/22
+%
+% Uses matrices - T(w,h,d) , R(w,h,d) , \zeta(w,-L,h,d), \zeta(w,L,h,d)
+% to produce a transmission model in an FSD + predict expected overwash
+% frequency over length
+%
+% Uses conditions for FSD and incoming wave for Agulhas II voyage.
+%
+% Generate the overwash along the transects
+
 clear all;
 close all;
 
